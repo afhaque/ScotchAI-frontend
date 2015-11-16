@@ -20,8 +20,8 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 /* Space out content a bit */
 body {
   padding-top: 20px;
-  padding-bottom: 20px;
   overflow-x: hidden;
+  background-color: #2A2A2A;
 }
 
 .queries {
@@ -34,7 +34,6 @@ body {
 
 .last-panel {
 
-  margin-bottom: 160px;
 
 }
 
@@ -225,4 +224,21 @@ body {
     50% { opacity:0; }
     100% { opacity:1; }
   }
+}
+
+// Sticky Footer
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 }
