@@ -3,12 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>ScotchAI</title>
-    <meta name="description" content="">
+    <meta name="Scotch AI " content="Scotch AI is a web based virtual assistant. It uses the Annyang library along with Angular and Node.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -22,7 +18,10 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
+    <!-- Anicollection -->
+    <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
   </head>
+
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -31,10 +30,8 @@
     <!-- Navbar -->
     <div class="container-fluid">
       <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -43,8 +40,7 @@
             <a class="navbar-brand" href="#">Scotch AI - MEAN Based Virtual Assistant</a>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Get Started</a></li>
               <li><a href="#">List of Commands</a></li>
@@ -55,64 +51,61 @@
                   <li><a href="#">GitHub Repo</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Anyang Library</a></li>
-                  <li><a href="#">Google Places Library</a></li>
-                  <li><a href="#">Wolfram Alpha Library</a></li>
+                  <li><a href="#">Google Places API</a></li>
+                  <li><a href="">Weather Underground API</a></li>
+                  <li><a href="#">Wolfram Alpha API</a></li>
                 </ul>
               </li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+          </div>
       </nav>
     </div>
 
     <!-- Queries -->
     <div class="container-fluid queries">
+
+      <!-- Logo and Initial Content -->
       <div class="col-lg-4 aiLogo">
         <div class="row">
-
           <img src="images/scotchAI.png" class="img center-block" width="100%" style="float:left">
           <h2 class="text-center">Hello, sir.</h2>
+          <!--<h2 class="text-center">Hm.</h2>-->
           <h3 class="text-center text-muted">Simply say: <span class="underline">"Hey Scotch"</span> to begin.</h3>
+          <!--<h3 class="text-center text-muted">Scotch AI is listening.</h3>-->
+
         </div>
       </div>
-      <div class="col-lg-7 chatLogs">
-        <div class="row">
-          <h1 class="scotchFont">Scotch AI:</h1>
+
+      <!-- Request / Response -->
+      <div class="col-lg-7 chatLogs" >
+
+        <!-- User Request -->
+        <div class="row userRequest">
+          <h1 class="userText">You: </h1>
           <div class="panel panel-default">
-            <div class="panel-body">
-              <h2 class="aiText">> How may I assist you?</h2>
-            </div>
-          </div>        </div>
-        <div class="row youResponse last-panel">
-          <h1><span><button class="btn  btn-default btn-lg microphoneBtn"><h2><i class="fa fa-microphone" style="color: black"></i></h2></button></span> You: </h1>
-          <div class="panel panel-default l">
             <div class="panel-body">
               <h2> > <span class="element"></span></h2>
             </div>
           </div>
-<!--          <div style="display:inline; float: left"><h3>Did I get this right?</h3></div>
-          <div class="btn-group" style="display: inline; float:left">
-            <div class="btn btn-primary btn-sm"><h4 class="buttonValidate">Correct!</h4></div>
-            <div class="btn btn-danger btn-sm"><h4 class="buttonValidate">Uh. Thats not what I said...</h4></div>
-          </div>-->
+          <div class="text-right">
+            <h3 style="float:right; color: white; vertical-align: middle;">Did we get this right?</h3>
+            <button class="btn btn-primary btn-lg"><i class="fa fa-check"></i> You got it!</button>
+            <button class="btn btn-danger btn-lg"><i class="fa fa-microphone"></i> Uh... Let's try that again!</button>
+          </div>
+
+<!--          <button class="btn  btn-default btn-lg microphoneBtn"><h2><i class="fa fa-microphone" style="color: black"></i>Activate Microphone</h2></button>-->
         </div>
-        <div class="row aiLog aiResponse" style="display: none">
-          <h1>Scotch AI: </h1>
-          <div class="panel panel-default last-panel">
+
+        <!-- AI Response -->
+        <div class="row aiResponse">
+          <h1 class="aiText" >Scotch AI:</h1>
+          <div class="panel panel-default">
             <div class="panel-body">
-              <!--<h2 class="aiText">> Awaiting your request, sir.</h2>-->
-<!--
-              <h2 class="aiText">> Certainly, sir.</h2>
--->
-<!--
-              <h2 class="aiText">> That is beyond my capabilities, sir.</h2>
--->
-
-              <h2 class="aiText">> It lies within, sir.</h2>
-
+              <h2> > I am sorry, sir. That is beyond my capability.</span></h2>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -172,6 +165,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container-fluid">
+        <button class="btn btn-default btn-xs" style="float:left" data-anijs="if: mouseover, do: wobble animated">Test Button</button>
         <p class="text-muted text-right">Created by Ahmed Haque for Scotch IO | 2015 </p>
       </div>
     </footer>
@@ -183,6 +177,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/holderjs/holder.js"></script>
     <script src="/bower_components/typed.js/dist/typed.min.js"></script>
+    <script src="/bower_components/AniJS/dist/anijs-min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -212,7 +207,7 @@
       $(function(){
         $(".element").typed({
           strings: ["Find nearest restaurants. ^1000", "What's the capital of Mali? ^1000", "What's 529 squared? ^1000", "How can I find inner peace? ^1000", ""],
-          typeSpeed: 3
+          typeSpeed: 2
         });
       });
     </script>
