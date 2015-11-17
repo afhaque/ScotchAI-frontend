@@ -65,35 +65,34 @@
     <div class="container-fluid queries">
 
       <!-- Logo and Initial Content -->
-      <div class="col-lg-4 aiLogo">
+      <div class="col-md-4 aiLogo">
         <div class="row">
-          <img src="images/scotchAI.png" class="img center-block" width="100%" style="float:left">
+          <img src="images/scotchAI.png" class="img center-block aiImg">
           <h2 class="text-center">Hello, sir.</h2>
           <!--<h2 class="text-center">Hm.</h2>-->
           <h3 class="text-center text-muted">Simply say: <span class="underline">"Hey Scotch"</span> to begin.</h3>
           <!--<h3 class="text-center text-muted">Scotch AI is listening.</h3>-->
-
         </div>
       </div>
 
       <!-- Request / Response -->
-      <div class="col-lg-7 chatLogs" >
+      <div class="col-md-7 chatLogs" >
 
         <!-- User Request -->
         <div class="row userRequest">
           <h1 class="userText">You: </h1>
           <div class="panel panel-default">
             <div class="panel-body">
-              <h2> > <span class="element"></span></h2>
+              <h2 class="userConsole"> > <span class="element"></span></h2>
             </div>
           </div>
-          <div class="text-right">
-            <h3 style="float:right; color: white; vertical-align: middle;">Did we get this right?</h3>
-            <button class="btn btn-primary btn-lg"><i class="fa fa-check"></i> You got it!</button>
-            <button class="btn btn-danger btn-lg"><i class="fa fa-microphone"></i> Uh... Let's try that again!</button>
-          </div>
 
-<!--          <button class="btn  btn-default btn-lg microphoneBtn"><h2><i class="fa fa-microphone" style="color: black"></i>Activate Microphone</h2></button>-->
+          <!-- Confirmation Buttons -->
+          <div class="text-right">
+            <button class="btn btn-danger btn-md uhBtn"><i class="fa fa-microphone"></i> Uh... Let's try that again!</button>
+            <button class="btn btn-primary btn-md youGotBtn"><i class="fa fa-check"></i> You got it!</button>
+            <h3 class="confirmText">Did we get this right?</h3>
+          </div>
         </div>
 
         <!-- AI Response -->
@@ -101,7 +100,7 @@
           <h1 class="aiText" >Scotch AI:</h1>
           <div class="panel panel-default">
             <div class="panel-body">
-              <h2> > I am sorry, sir. That is beyond my capability.</span></h2>
+              <h2 class="aiConsole"> > Bamako, sir.</h2>
             </div>
           </div>
         </div>
@@ -109,58 +108,61 @@
       </div>
     </div>
 
- <!--   &lt;!&ndash; Results &ndash;&gt;
-    <div class="container-fluid results" style="display: none">
-    <div class="col-lg-7 col-lg-offset-4" style="display: none">
-      <h1 style="color: black">Results:</h1>
-      <table class="table">
-        <thead>
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-        </tbody>
-      </table>
+    <!-- Responses -->
+    <div class="container-fluid responses">
+      <div class="row responseSection">
+        <div class="col-md-4">
+          <img src="http://petapixel.com/assets/uploads/2013/03/thumbsandammo-8.jpg" class="img img-circle center-block  resultsImg">
+        </div>
+        <div class="col-md-7">
+          <h1 class="resultsText">Results:</h1>
+          <table class="table table-bordered table-hover">
+            <tr>
+              <th class="tg-yw4l">Name</th>
+              <th class="tg-yw4l">Distance (mi)</th>
+              <th class="tg-yw4l">Street Address</th>
+              <th class="tg-yw4l">City</th>
+              <th class="tg-yw4l">State</th>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">General Taos</td>
+              <td class="tg-yw4l">5 </td>
+              <td class="tg-yw4l">1811 Forest Dr</td>
+              <td class="tg-yw4l">Houston</td>
+              <td class="tg-yw4l">TX</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">Panda Express</td>
+              <td class="tg-yw4l">10</td>
+              <td class="tg-yw4l">1511 TeeSpring Ln</td>
+              <td class="tg-yw4l">Houston</td>
+              <td class="tg-yw4l">TX</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">Chin's</td>
+              <td class="tg-yw4l">20</td>
+              <td class="tg-yw4l">122 Hello Kitty Rd</td>
+              <td class="tg-yw4l">Houston</td>
+              <td class="tg-yw4l">TX</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">Chinese Hut</td>
+              <td class="tg-yw4l">25</td>
+              <td class="tg-yw4l">612 Little Kid Pk</td>
+              <td class="tg-yw4l">Houston</td>
+              <td class="tg-yw4l">TX</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">Pear Tea</td>
+              <td class="tg-yw4l">33</td>
+              <td class="tg-yw4l">11 Kissime Hut</td>
+              <td class="tg-yw4l">Houston</td>
+              <td class="tg-yw4l">TX</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
-    </div>-->
 
     <!-- Footer -->
     <footer class="footer">
@@ -170,8 +172,6 @@
       </div>
     </footer>
 
-
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -180,7 +180,6 @@
     <script src="/bower_components/AniJS/dist/anijs-min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
 
     <!-- build:js(.) scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
