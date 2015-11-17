@@ -83,7 +83,11 @@
           <h1 class="userText">You: </h1>
           <div class="panel panel-default">
             <div class="panel-body">
-              <h2 class="userConsole"> > <span class="element"></span></h2>
+              <h2>
+                <input id="element"  type="text" class="form-control input-lg" placeholder=""/>
+              </h2>
+              <div class="form-group">
+              </div>
             </div>
           </div>
 
@@ -100,7 +104,7 @@
           <h1 class="aiText" >Scotch AI:</h1>
           <div class="panel panel-default">
             <div class="panel-body">
-              <h2 class="aiConsole"> > Bamako, sir.</h2>
+              <h2 class="aiConsole"> > </h2>
             </div>
           </div>
         </div>
@@ -109,7 +113,7 @@
     </div>
 
     <!-- Responses -->
-    <div class="container-fluid responses">
+    <div class="container-fluid responses hidden">
       <div class="row responseSection">
         <div class="col-md-4">
           <img src="http://petapixel.com/assets/uploads/2013/03/thumbsandammo-8.jpg" class="img img-circle center-block  resultsImg">
@@ -167,7 +171,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container-fluid">
-        <button class="btn btn-default btn-xs" style="float:left" data-anijs="if: mouseover, do: wobble animated">Test Button</button>
+        <button class="btn btn-default btn-xs" style="float:left" data-anijs="if: mouseover, do: tada animated">Test Button</button>
         <p class="text-muted text-right">Created by Ahmed Haque for Scotch IO | 2015 </p>
       </div>
     </footer>
@@ -178,6 +182,7 @@
     <script src="/bower_components/holderjs/holder.js"></script>
     <script src="/bower_components/typed.js/dist/typed.min.js"></script>
     <script src="/bower_components/AniJS/dist/anijs-min.js"></script>
+    <script src="/bower_components/annyang/annyang.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -204,11 +209,27 @@
     <!-- Typed -->
     <script>
       $(function(){
-        $(".element").typed({
-          strings: ["Find nearest restaurants. ^1000", "What's the capital of Mali? ^1000", "What's 529 squared? ^1000", "How can I find inner peace? ^1000", ""],
+        $("#element").typed({
+          strings: ["Find nearest restaurants. ^1000", "What's the capital of Mali? ^1000", "What's 529 squared? ^1000", "How can I find inner peace? ^1000", "..."],
           typeSpeed: 2
         });
       });
+    </script>
+
+    <!-- Annyang -->
+    <script>
+      if (annyang) {
+        // Let's define a command.
+        var commands = {
+          'hello': function() { alert('Hello world!'); }
+        };
+
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+
+        // Start listening.
+        annyang.start();
+      }
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
